@@ -1,13 +1,22 @@
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 
+// the optional chaining operator ? helps use return undefined when accessinga property of a null object instead of throwing a TypeError
+
+const queryClient = new QueryClient();
+
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+ <QueryClientProvider client={queryClient}>
+      <App />
+ </QueryClientProvider>
   
-  <App />
+
    
   
 );
